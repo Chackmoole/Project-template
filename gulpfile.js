@@ -13,6 +13,21 @@ import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import del from 'del';
 import browser from 'browser-sync';
+import htmlBemValidator from 'gulp-html-bem-validator'
+import htmlValidator from 'gulp-w3cjs'
+
+const validateHtml = () => {
+    return gulp.src("build/**/*.html")
+        .pipe(htmlValidator())
+        .pipe(htmlValidator.reporter());
+};
+
+const checkBEM = () => {
+    return gulp.src("build/**/*.html").pipe(htmlBemValidator());
+};
+
+export const validate = gulp.parallel(validateHtml, checkBEM)
+
 
 // Styles
 
