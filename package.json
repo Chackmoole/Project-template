@@ -20,6 +20,7 @@
     "gulp-webp": "4.0.1",
     "postcss": "8.3.9",
     "postcss-csso": "5.0.1",
+    "prettier": "2.5.1",
     "stylelint": "13.13.1",
     "stylelint-config-htmlacademy": "0.1.10"
   },
@@ -30,7 +31,8 @@
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp",
-    "validate": "gulp validate"
+    "validate": "gulp validate",
+    "prettier": "npx prettier --write ."
   },
   "browserslist": [
     "last 2 versions",
