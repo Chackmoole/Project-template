@@ -1,3 +1,30 @@
 {
-  "extends": "stylelint-config-htmlacademy"
+  "customSyntax": "postcss-less",
+  "extends": ["stylelint-config-recommended-less", "stylelint-config-property-sort-order-smacss"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/order": [
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::(before|after)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w"
+      },
+      {
+        "type": "rule",
+        "selector": "^&--"
+      },
+      {
+        "type": "rule",
+        "selector": "^."
+      }
+    ]
+  }
 }
